@@ -47,18 +47,18 @@ export default function SignupPage() {
     setError('');
 
      try {
-      const response = await api.post('/api/v1/users/register', {
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      });
+     const { data } = await api.post('/api/v1/users/register', {
+  name: formData.name,
+  email: formData.email,
+  password: formData.password,
+});
 
-      const data = response.data;
+// Optional: show success message if needed
+console.log("Registration success:", data);
 
-      // Handle Backend Errors
-      if (!response.ok) {
-        throw new Error(data.message || 'Registration failed. Please try again.');
-      }
+// Navigate to login
+navigate('/login', { state: { from: 'signup', email: formData.email } });
+
 
       // Success: Redirect to Login
       navigate('/login', { state: { from: 'signup', email: formData.email } });
