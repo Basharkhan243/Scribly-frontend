@@ -53,7 +53,7 @@ export default function SignupPage() {
         password: formData.password,
       });
 
-      const data = await response.json();
+      const data = response.data;
 
       // Handle Backend Errors
       if (!response.ok) {
