@@ -1,21 +1,18 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+
 import Layout from './components/Layout';
 import Preloader from './components/Preloader';
 import AuthWrapper from './components/AuthWrapper';
 import ErrorBoundary from './components/ErrorBoundary';
 
-// Lazy-loaded pages with error handling
-const lazyLoad = (path) => lazy(() => import(`./pages/${path}`).catch(() => ({ 
-  default: () => <div>Failed to load component</div> 
-})));
-
-const Home = lazyLoad('Home');
-const Login = lazyLoad('Login');
-const Signup = lazyLoad('Signup');
-const Notes = lazyLoad('Notes');
-const NotFound = lazyLoad('NotFound');
+// ✅ Static lazy imports (Vite-compatible)
+const Home = lazy(() => import('./pages/Home'));
+const Login = lazy(() => import('./pages/Login'));
+const Signup = lazy(() => import('./pages/Signup'));
+const Notes = lazy(() => import('./pages/Notes'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   const location = useLocation();
