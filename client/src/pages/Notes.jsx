@@ -3,7 +3,7 @@ import { FiSun, FiMoon, FiPlus, FiTrash2, FiEdit2, FiLogOut } from 'react-icons/
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import api from '../utils/api'; 
+import api from '../utils/api'; // Adjust the import path as necessary
 
 // ...same imports
 import { FiSearch } from 'react-icons/fi';
@@ -24,7 +24,7 @@ export default function NotesPage() {
   const fetchNotes = async () => {
     try {
       const res = await api.get('/api/v1/notes/getmynotes', {
-  headers: { Authorization: Bearer ${token} },
+  headers: { Authorization: `Bearer ${token}` },
   });
 
       
@@ -50,13 +50,13 @@ export default function NotesPage() {
     e.preventDefault();
     try {
       if (editingId) {
-        const res=await api.put(/api/v1/notes/${editingId}, newNote, { headers: { Authorization: Bearer ${token} }
+        const res=await api.put(`/api/v1/notes/${editingId}`, newNote, { headers: { Authorization: `Bearer ${token}` }
         });
         const updated = res.data.note || res.data;
         setNotes(notes.map((note) => (note._id === editingId ? updated : note)));
       } else {
         const res = await api.post('/api/v1/notes/createnote', newNote, {
-  headers: { Authorization: Bearer ${token} }
+  headers: { Authorization: `Bearer ${token}` }
         });
         const createdNote = res.data.note || res.data;
         if (!createdNote || !createdNote.title) {
@@ -81,7 +81,7 @@ export default function NotesPage() {
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(/api/v1/notes/${id}, { headers: { Authorization: Bearer ${token} },
+      await api.delete(`/api/v1/notes/${id}`, { headers: { Authorization: `Bearer ${token}` },
         
       });
       setNotes(notes.filter((note) => note._id !== id));
