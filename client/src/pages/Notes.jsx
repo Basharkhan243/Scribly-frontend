@@ -94,7 +94,7 @@ export default function NotesPage() {
   try {
     await api.post('/api/v1/users/logout'); // No need to pass headers
     localStorage.removeItem('token'); // Optional if you're not storing access token
-    navigate('/login');
+    navigate('/');
   } catch (err) {
     console.error('Logout failed:', err.message);
   }
