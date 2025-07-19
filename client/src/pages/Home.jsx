@@ -97,6 +97,7 @@ export default function Homepage() {
           className="mt-12"
         >
           <button 
+            onClick={() => navigate('/login')}
             className={`px-8 py-3 rounded-full text-lg font-medium transition-all relative overflow-hidden group   text-white bg-black hover:scale-105`}
           >
             <span className="relative z-10">Get Started</span>
