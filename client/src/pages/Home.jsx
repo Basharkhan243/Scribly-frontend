@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
   const [darkMode, setDarkMode] = useState(false);
