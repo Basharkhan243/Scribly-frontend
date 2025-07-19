@@ -3,7 +3,7 @@ import { FiSun, FiMoon, FiPlus, FiTrash2, FiEdit2, FiLogOut } from 'react-icons/
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import api from '../utils/api'; // Adjust the import path as necessary
+import api from '../utils/api'; 
 
 // ...same imports
 import { FiSearch } from 'react-icons/fi';
