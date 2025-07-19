@@ -90,16 +90,16 @@ export default function NotesPage() {
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await api.post('/api/v1/users/logout', {}, { headers: { Authorization: `Bearer ${token}` }
-      });
-      localStorage.removeItem('token');
-      navigate('/login');
-    } catch (err) {
-      console.error('Logout failed:', err.message);
-    }
-  };
+ const handleLogout = async () => {
+  try {
+    await api.post('/api/v1/users/logout'); // No need to pass headers
+    localStorage.removeItem('token'); // Optional if you're not storing access token
+    navigate('/login');
+  } catch (err) {
+    console.error('Logout failed:', err.message);
+  }
+};
+
 
   // Filter notes based on search term
   const filteredNotes = notes.filter((note) =>
