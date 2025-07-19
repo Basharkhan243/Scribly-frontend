@@ -57,7 +57,7 @@ export default function Homepage() {
       </nav>
 
       {/* Main Content - Left-aligned */}
-      <div className="relative z-10 h-full flex flex-col ml-6 items-start justify-center p-8 text-left pl-12 md:pl-24">
+      <div className="relative z-10 h-full flex flex-col md:ml-6 ml-4 items-start justify-center p-8 text-left pl-12 md:pl-24">
         {/* Logo with Animation */}
         <motion.div
           initial={{ scale: 0.6, opacity: 0 }}
