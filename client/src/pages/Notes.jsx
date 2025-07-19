@@ -120,7 +120,7 @@ export default function NotesPage() {
   }, [searchTerm, notes]);
 
   return (
-    <div className={fixed inset-0 overflow-y-auto ${darkMode ? 'bg-black/65' : 'bg-gradient-to-b from-black/30 to-black/70'}}>
+   <div className={`fixed inset-0 overflow-y-auto ${darkMode ? 'bg-black/65' : 'bg-gradient-to-b from-black/30 to-black/70'}`}>
       {/* Top Nav */}
       <nav className="fixed top-0 left-0 z-20 p-4 sm:p-6 flex flex-wrap justify-between w-full items-center gap-4">
         <div className="flex gap-4 flex-grow">
@@ -146,7 +146,7 @@ export default function NotesPage() {
             <FiSearch className="absolute left-2.5 top-2.5 text-gray-500" />
           </div>
           {suggestions.length > 0 && (
-            <div className={absolute mt-1 w-full bg-white text-white dark:bg-black/20 shadow-lg rounded-lg z-50}>
+            <div className={`absolute mt-1 w-full bg-white text-white dark:bg-black/20 shadow-lg rounded-lg z-50`}>
               {suggestions.map((suggestion, index) => (
                 <div
                   key={index}
@@ -167,9 +167,9 @@ export default function NotesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={max-w-3xl mx-auto p-6 rounded-xl shadow-xl ${darkMode ? 'bg-black/20' : 'bg-white/80'} backdrop-blur-sm}
+          className={`max-w-3xl mx-auto p-6 rounded-xl shadow-xl ${darkMode ? 'bg-black/20' : 'bg-white/80'} backdrop-blur-sm`}
         >
-          <h1 className={text-2xl sm:text-3xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-black'}}>
+          <h1 className={`text-2xl sm:text-3xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-black'}`}>
             My Notes
           </h1>
 
@@ -181,7 +181,7 @@ export default function NotesPage() {
               placeholder="Note title"
               value={newNote.title}
               onChange={handleInputChange}
-              className={w-full mb-4 px-4 py-3 rounded-lg border ${darkMode ? 'bg-white/80 text-black' : 'bg-white text-black'}}
+              className={`w-full mb-4 px-4 py-3 rounded-lg border ${darkMode ? 'bg-white/80 text-black' : 'bg-white text-black'}`}
               required
             />
             <textarea
@@ -190,7 +190,7 @@ export default function NotesPage() {
               value={newNote.content}
               onChange={handleInputChange}
               rows="3"
-              className={w-full mb-4 px-4 py-3 rounded-lg border ${darkMode ? 'bg-white/80 text-black' : 'bg-white text-black'}}
+              className={`w-full mb-4 px-4 py-3 rounded-lg border ${darkMode ? 'bg-white/80 text-black' : 'bg-white text-black'}`}
               required
             />
             <label className="flex items-center mb-4">
@@ -201,13 +201,13 @@ export default function NotesPage() {
                 onChange={handleInputChange}
                 className="mr-2"
               />
-              <span className={${darkMode ? 'text-white' : 'text-black'}}>Make Public</span>
+              <span className={`${darkMode ? 'text-white' : 'text-black'}`}>Make Public</span>
             </label>
             <button
               type="submit"
-              className={w-full py-3 px-4 rounded-full font-medium transition-all ${
+              className={`w-full py-3 px-4 rounded-full font-medium transition-all ${
                 darkMode ? 'bg-white text-black hover:bg-white/70' : 'bg-black text-white hover:bg-black/80'
-              }}
+              }`}
             >
               <span className="flex items-center justify-center gap-2">
                 {editingId ? 'Update Note' : 'Add Note'} <FiPlus />
@@ -223,7 +223,7 @@ export default function NotesPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className={p-4 rounded-lg ${darkMode ? 'bg-black/80 text-white' : 'bg-white text-black'} shadow}
+                className={`p-4 rounded-lg ${darkMode ? 'bg-black/80 text-white' : 'bg-white text-black'} shadow`}
               >
                 <div className="flex justify-between items-start">
                   <h3 className="font-bold">{note.title}</h3>
@@ -244,5 +244,6 @@ export default function NotesPage() {
         </motion.div>
       </div>
     </div>
+  
   );
 } 
