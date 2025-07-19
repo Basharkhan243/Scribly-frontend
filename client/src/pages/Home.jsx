@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
   const [darkMode, setDarkMode] = useState(false);
+   const navigate = useNavigate();
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
