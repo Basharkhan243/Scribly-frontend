@@ -134,7 +134,7 @@ export default function NotesPage() {
             {darkMode ? <FiSun className="w-5 h-5 text-white" /> : <FiMoon className="w-5 h-5 text-black" />}
           </button>
         </div>
-        <div className="relative flex-grow md:max-w-xs w-5 ml-auto">
+        <div className="relative flex-grow md:max-w-xs w-10 ml-auto">
           <div className="relative">
             <input
               type="text"
@@ -146,7 +146,7 @@ export default function NotesPage() {
             <FiSearch className="absolute left-2.5 top-2.5 text-gray-500" />
           </div>
           {suggestions.length > 0 && (
-            <div className={`absolute mt-1 md:w-full w-5 bg-white text-white dark:bg-black/20 shadow-lg rounded-lg z-50`}>
+            <div className={`absolute mt-1 md:w-full w-12 bg-white text-white dark:bg-black/20 shadow-lg rounded-lg z-50`}>
               {suggestions.map((suggestion, index) => (
                 <div
                   key={index}
