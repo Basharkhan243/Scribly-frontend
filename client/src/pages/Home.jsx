@@ -25,7 +25,7 @@ export default function Homepage() {
         >
           <source src="/video/video.mp4" type="video/mp4" />
         </video>
-        <div className={`absolute inset-0 ${darkMode ? 'bg-black/65' : 'bg-black/10'}`}></div>
+        <div className={`absolute inset-0 ${darkMode ? 'bg-black/65' : 'bg-black/5'}`}></div>
       </div>
 
       {/* Navigation - Fixed Top Right */}
