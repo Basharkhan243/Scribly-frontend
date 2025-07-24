@@ -33,7 +33,7 @@ export default function LoginPage() {
         }
       );
 
-      // Redirect to /notes on success
+      
       navigate('/notes');
     } catch (err) {
       if (err.response?.data?.message) {
@@ -46,7 +46,6 @@ export default function LoginPage() {
 
   return (
     <div className={`fixed inset-0 overflow-hidden ${darkMode ? 'bg-black/65' : 'bg-gradient-to-b from-black/30 to-black/70'}`}>
-      {/* Navigation */}
       <nav className="fixed top-0 right-0 z-20 p-6">
         <div className="flex items-center gap-6">
           <button 
@@ -68,7 +67,7 @@ export default function LoginPage() {
         </div>
       </nav>
 
-      {/* Main Form */}
+     
       <div className="relative z-10 h-full flex items-center justify-center p-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
