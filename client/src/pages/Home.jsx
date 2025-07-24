@@ -1,4 +1,4 @@
-// comment
+
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
@@ -14,7 +14,7 @@ export default function Homepage() {
 
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Video Background (always visible) */}
+     
       <div className="absolute inset-0">
         <video
           autoPlay
@@ -28,7 +28,7 @@ export default function Homepage() {
         <div className={`absolute inset-0 ${darkMode ? 'bg-black/65' : 'bg-black/5'}`}></div>
       </div>
 
-      {/* Navigation - Fixed Top Right */}
+      
       <nav className="fixed top-0 right-0 z-20 p-6">
         <div className="flex items-center gap-6">
           <button 
@@ -58,9 +58,9 @@ export default function Homepage() {
         </div>
       </nav>
 
-      {/* Main Content - Left-aligned */}
+      
       <div className="relative z-10 h-full flex flex-col md:ml-6 ml-4 items-start justify-center p-8 text-left pl-12 md:pl-24">
-        {/* Logo with Animation */}
+        
         <motion.div
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -91,7 +91,7 @@ export default function Homepage() {
           </p>
         </motion.div>
 
-        {/* Get Started Button */}
+        
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
