@@ -123,7 +123,7 @@ export default function NotesPage() {
 
   return (
     <div className={`fixed inset-0 overflow-y-auto ${darkMode ? 'bg-black/65' : 'bg-gradient-to-b from-black/30 to-black/70'}`}>
-      {/* Top Nav */}
+     
       <nav className="fixed top-0 left-0 z-20 p-4 sm:p-6 flex flex-wrap justify-between w-full items-center gap-4">
         <div className="flex gap-4 flex-grow">
           <button
@@ -163,7 +163,7 @@ export default function NotesPage() {
         </div>
       </nav>
 
-      {/* Content */}
+      
       <div className="relative z-10 pt-24 pb-4 px-4 sm:px-6 min-h-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ export default function NotesPage() {
             My Notes
           </h1>
 
-          {/* Form */}
+          
           <form onSubmit={handleSubmit} className="mb-8">
             <input
               type="text"
@@ -245,7 +245,7 @@ export default function NotesPage() {
             </button>
           </form>
 
-          {/* Notes List */}
+         
           <div className="space-y-4 md:max-h-[400px] md:overflow-y-auto">
             {noteLoading ? (
               <div className="flex justify-center items-center h-32">
