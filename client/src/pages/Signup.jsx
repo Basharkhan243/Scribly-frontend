@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
 export default function SignupPage() {
-  // State Management
+  
   const [darkMode, setDarkMode] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -17,10 +17,10 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Toggle Dark Mode
+  
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
-  // Handle Form Input Changes
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -28,11 +28,11 @@ export default function SignupPage() {
     });
   };
 
-  // Form Submission with Backend Integration
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Client-side Validation
+    
     if (!formData.name || !formData.email || !formData.password) {
       setError('All fields are required');
       return;
@@ -53,14 +53,14 @@ export default function SignupPage() {
   password: formData.password,
 });
 
-// Optional: show success message if needed
+
 console.log("Registration success:", data);
 
-// Navigate to login
+
 navigate('/login', { state: { from: 'signup', email: formData.email } });
 
 
-      // Success: Redirect to Login
+      
       navigate('/login', { state: { from: 'signup', email: formData.email } });
       
     } catch (err) {
@@ -73,7 +73,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
 
   return (
     <div className={`fixed inset-0 overflow-hidden ${darkMode ? 'bg-black/65' : 'bg-gradient-to-b from-black/30 to-black/70'}`}>
-      {/* Navigation */}
+      
       <nav className="fixed top-0 right-0 z-20 p-4 sm:p-6">
         <div className="flex items-center gap-4 sm:gap-6">
           <button 
@@ -96,7 +96,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
         </div>
       </nav>
 
-      {/* Main Form */}
+      
       <div className="relative z-10 h-full flex items-center justify-center p-4 sm:p-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
             </p>
           </div>
 
-          {/* Error Message */}
+         
           {error && (
             <div className={`mb-4 p-3 rounded-lg text-sm ${
               darkMode ? 'bg-red-900/50 text-red-100' : 'bg-red-100 text-red-800'
@@ -128,7 +128,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
           )}
 
           <form onSubmit={handleSubmit}>
-            {/* Name Field */}
+            
             <div className="mb-3 sm:mb-4">
               <label 
                 htmlFor="name" 
@@ -148,7 +148,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
               />
             </div>
 
-            {/* Email Field */}
+           
             <div className="mb-3 sm:mb-4">
               <label 
                 htmlFor="email" 
@@ -168,7 +168,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
               />
             </div>
 
-            {/* Password Field */}
+            
             <div className="mb-3 sm:mb-4">
               <label 
                 htmlFor="password" 
@@ -189,7 +189,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
               />
             </div>
 
-            {/* Confirm Password Field */}
+            
             <div className="mb-6 sm:mb-8">
               <label 
                 htmlFor="confirmPassword" 
@@ -209,7 +209,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
               />
             </div>
 
-            {/* Submit Button */}
+            
             <button
               type="submit"
               disabled={loading}
@@ -240,7 +240,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
               )}
             </button>
 
-            {/* Login Link */}
+            
             <div className="text-center mt-4 sm:mt-6">
               <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 Already have an account?{' '}
