@@ -7,7 +7,7 @@ import Preloader from './components/Preloader';
 import AuthWrapper from './components/AuthWrapper';
 import ErrorBoundary from './components/ErrorBoundary';
 
-// ✅ Static lazy imports (Vite-compatible)
+
 const Home = lazy(() => import('./pages/Home'));
 const Login = lazy(() => import('./pages/Login'));
 const Signup = lazy(() => import('./pages/Signup'));
@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 5000); // 5-second preloader
+    }, 5000); 
 
     return () => clearTimeout(timer);
   }, []);
