@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'alfa-slab': ['"Alfa Slab One"', 'serif'],
-        'inter': ['Inter', 'sans-serif'], // Adding Inter as an option
+        'inter': ['Inter', 'sans-serif'], 
       },
     },
   },
