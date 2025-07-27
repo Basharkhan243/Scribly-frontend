@@ -21,6 +21,7 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setLoading(true);
 
     try {
       const response = await api.post(
@@ -42,6 +43,8 @@ export default function LoginPage() {
       } else {
         setError('Login failed. Please try again.');
       }
+    }finally{
+      setLoading(false);
     }
   };
 
