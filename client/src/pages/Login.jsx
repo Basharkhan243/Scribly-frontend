@@ -62,12 +62,20 @@ export default function LoginPage() {
               <FiMoon className="w-5 h-5 text-black" />
             )}
           </button>
-          <a 
-            href="/signup" 
-            className={`text-lg ${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} transition-all border-b border-transparent hover:border-current`}
+          <motion.a
+            href="/signup"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative text-l bg-black font-medium px-5 py-2 rounded-xl text-white overflow-hidden group"
           >
-            Sign Up
-          </a>
+            <span className="relative z-10">Sign Up</span>
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "0%" }}
+              transition={{ duration: 0.4 }}
+            />
+          </motion.a>
         </div>
       </nav>
 
@@ -178,3 +186,4 @@ export default function LoginPage() {
     </div>
   );
 }
+
