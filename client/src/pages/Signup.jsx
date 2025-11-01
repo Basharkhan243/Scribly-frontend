@@ -252,12 +252,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
             <div className="text-center mt-4 sm:mt-6">
               <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 Already have an account?{' '}
-                <a 
-                  href="/login" 
-                  className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'} transition-colors`}
-                >
-                  Login
-                </a>
+                Then Login from above.
               </p>
             </div>
           </form>
@@ -266,4 +261,5 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
     </div>
   );
 }
+
 
