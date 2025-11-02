@@ -135,6 +135,12 @@ export default function NotesPage() {
           <button onClick={toggleDarkMode} className="p-2 rounded-full">
             {darkMode ? <FiSun className="w-5 h-5 text-white" /> : <FiMoon className="w-5 h-5 text-black" />}
           </button>
+          <button
+          onClick={() => navigate("/publicnotes")}
+          className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-full flex items-center gap-2"
+        >
+          🌍 Public Notes
+        </button>
         </div>
         <div className="relative flex-grow md:max-w-xs w-12 ml-auto">
           <div className="relative">
@@ -294,4 +300,5 @@ export default function NotesPage() {
     </div>
   );
 }
+
 
