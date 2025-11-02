@@ -85,7 +85,7 @@ export default function LoginPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`w-full max-w-md p-8 rounded-xl shadow-xl ${darkMode ? 'bg-black/20' : 'bg-white/80'}`}
+          className={`w-full max-w-md p-8 rounded-xl shadow-xl ${darkMode ? 'bg-black/50' : 'bg-white/55'}`}
         >
           <div className="text-center mb-8">
             <img 
@@ -186,4 +186,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
 
