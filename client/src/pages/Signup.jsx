@@ -110,7 +110,7 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`w-full max-w-md p-6 sm:p-8 rounded-xl shadow-xl ${darkMode ? 'bg-black/20' : 'bg-white/80'} backdrop-blur-sm`}
+          className={`w-full max-w-md p-6 sm:p-8 rounded-xl shadow-xl ${darkMode ? 'bg-black/50' : 'bg-white/55'} backdrop-blur-sm`}
         >
           <div className="text-center mb-6 sm:mb-8">
             <img 
@@ -261,5 +261,6 @@ navigate('/login', { state: { from: 'signup', email: formData.email } });
     </div>
   );
 }
+
 
 
