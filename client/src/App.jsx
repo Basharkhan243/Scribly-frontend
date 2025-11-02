@@ -13,6 +13,7 @@ const Login = lazy(() => import('./pages/Login'));
 const Signup = lazy(() => import('./pages/Signup'));
 const Notes = lazy(() => import('./pages/Notes'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const PublicNotes = lazyLoad("PublicNotesPage");
 
 function App() {
   const location = useLocation();
@@ -38,6 +39,14 @@ function App() {
               <Route path="/login" element={<Layout type="auth"><Login /></Layout>} />
               <Route path="/signup" element={<Layout type="auth"><Signup /></Layout>} />
               <Route path="/notes" element={<Layout type="protected"><Notes /></Layout>} />
+              <Route
+                path="/publicnotes"
+                element={
+                  <Layout type="protected">
+                    <PublicNotes />
+                  </Layout>
+                }
+              />
               <Route path="*" element={<Layout type="default"><NotFound /></Layout>} />
             </Routes>
           </AnimatePresence>
