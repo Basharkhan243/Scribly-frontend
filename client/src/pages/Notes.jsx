@@ -169,7 +169,7 @@ export default function NotesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`max-w-3xl mx-auto p-6 rounded-xl shadow-xl ${darkMode ? 'bg-black/20' : 'bg-white/80'} backdrop-blur-sm`}
+          className={`max-w-3xl mx-auto p-6 rounded-xl shadow-xl ${darkMode ? 'bg-black/50' : 'bg-white/55'} backdrop-blur-sm`}
         >
           <h1 className={`text-2xl sm:text-3xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-black'}`}>
             My Notes
@@ -294,3 +294,4 @@ export default function NotesPage() {
     </div>
   );
 }
+
