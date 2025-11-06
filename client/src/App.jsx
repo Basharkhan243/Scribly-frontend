@@ -1,19 +1,24 @@
-import { lazy, Suspense, useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { lazy, Suspense, useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import Layout from "./components/Layout";
+import Preloader from "./components/Preloader";
+import AuthWrapper from "./components/AuthWrapper";
+import ErrorBoundary from "./components/ErrorBoundary";
 
-import Layout from './components/Layout';
-import Preloader from './components/Preloader';
-import AuthWrapper from './components/AuthWrapper';
-import ErrorBoundary from './components/ErrorBoundary';
+const lazyLoad = (path) =>
+  lazy(() =>
+    import(`./pages/${path}`).catch(() => ({
+      default: () => <div>Failed to load component</div>,
+    }))
+  );
 
-
-const Home = lazy(() => import('./pages/Home'));
-const Login = lazy(() => import('./pages/Login'));
-const Signup = lazy(() => import('./pages/Signup'));
-const Notes = lazy(() => import('./pages/Notes'));
-const NotFound = lazy(() => import('./pages/NotFound'));
-
+const Home = lazyLoad("Home");
+const Login = lazyLoad("Login");
+const Signup = lazyLoad("Signup");
+const Notes = lazyLoad("Notes");
+const NotFound = lazyLoad("NotFound");
+const PublicNotes = lazyLoad("PublicNotesPage");
 
 function App() {
   const location = useLocation();
@@ -22,7 +27,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 5000); 
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -35,10 +40,38 @@ function App() {
         <Suspense fallback={<Preloader minimal />}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<Layout type="default"><Home /></Layout>} />
-              <Route path="/login" element={<Layout type="auth"><Login /></Layout>} />
-              <Route path="/signup" element={<Layout type="auth"><Signup /></Layout>} />
-              <Route path="/notes" element={<Layout type="protected"><Notes /></Layout>} />
+              <Route
+                path="/"
+                element={
+                  <Layout type="default">
+                    <Home />
+                  </Layout>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <Layout type="auth">
+                    <Login />
+                  </Layout>
+                }
+              />
+              <Route
+                path="/signup"
+                element={
+                  <Layout type="auth">
+                    <Signup />
+                  </Layout>
+                }
+              />
+              <Route
+                path="/notes"
+                element={
+                  <Layout type="protected">
+                    <Notes />
+                  </Layout>
+                }
+              />
               <Route
                 path="/publicnotes"
                 element={
@@ -47,7 +80,15 @@ function App() {
                   </Layout>
                 }
               />
-              <Route path="*" element={<Layout type="default"><NotFound /></Layout>} />
+
+              <Route
+                path="*"
+                element={
+                  <Layout type="default">
+                    <NotFound />
+                  </Layout>
+                }
+              />
             </Routes>
           </AnimatePresence>
         </Suspense>
